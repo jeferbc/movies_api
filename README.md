@@ -96,8 +96,11 @@ https://www.postgresql.org/docs/9.0/sql-createdatabase.html
 
 After you create the databases, run the migrations by executing:
 
-```$ sequel -m db/migrations postgres://localhost/theaters_test```
-```$ sequel -m db/migrations postgres://localhost/theaters_development```
+```
+$ sequel -m db/migrations postgres://localhost/theaters_test
+```
+```
+$ sequel -m db/migrations postgres://localhost/theaters_development
 ```
 
 ## Contributing
