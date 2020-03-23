@@ -1,6 +1,6 @@
 ## API endpoints
 
-# GET
+## GET
 * Get movies by day of presentation:
 ```
 curl 'https://shrouded-sierra-13385.herokuapp.com/api/movies?day=2020-03-26'
@@ -40,7 +40,7 @@ username: username
 presentation_id: presentation id
 ```
 
-# POST
+## POST
 * Create a movie:
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"movie","description":"description", "url_image": "https://fakeimg.pl/300/", "presentations": [{"day": "2020-03-26"}]}' https://shrouded-sierra-13385.herokuapp.com/api/movies
