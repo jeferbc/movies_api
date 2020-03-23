@@ -2,6 +2,4 @@ require 'sequel'
 
 Sequel::Model.plugin :json_serializer
 
-DB = Sequel.connect(adapter: :postgres, database: "theaters_#{ENV['RACK_ENV']}",
-                                        host: 'localhost',
-                                        username: 'postgres', password: '')
+DB = Sequel.connect(ENV['DATABASE_URL'] || "postgres://localhost/theaters_#{ENV['RACK_ENV']}")
