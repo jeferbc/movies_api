@@ -1,7 +1,5 @@
 module Theaters
   class Movies < Grape::API
-    format :json
-
     params do
       optional :name
       optional :description

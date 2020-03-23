@@ -1,8 +1,6 @@
 class Movie < Sequel::Model
   include Dry::Transaction
 
-  many_to_one :presentations
-
   step :validate
   step :create_movie
   step :create_presentations
