@@ -3,24 +3,24 @@ module Theaters
     format :json
 
     params do
-      requires :name
-      requires :description
-      requires :url_image
+      optional :name
+      optional :description
+      optional :url_image
+      optional :presentations
     end
 
     get '/movies' do
-      Movie.all
+      DB[:movies].join(:presentations, movie_id: :id).where(day: params[:day]).all
     end
 
-# TODO: search for a good response
     post '/movies' do
       movie = Movie.new.call(params) do |m|
         m.success do |movie_id|
-          movie_id
+          { movie: movie_id }
         end
 
         m.failure :validate do |validation|
-          validation
+          { error: validation }
         end
       end
     end
